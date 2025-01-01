@@ -8,6 +8,7 @@ schizo = pd.read_excel('../raw/schizo.xls')
 schizo.to_sql('Schizo', engine, if_exists='replace', index=False)
 
 soil = pd.read_table('../raw/soil.txt', header=None)
+soil.columns = ['Ph']
 soil.to_sql('Soil', engine, if_exists='replace', index=False)
 
 lamb = pd.DataFrame(
